@@ -1,6 +1,6 @@
-from statistics import mode
-from tabnanny import verbose
 from django.db import models
+from django.forms import CheckboxInput
+from django import forms
 
 # Create your models here.
 
@@ -72,6 +72,8 @@ class Orders(models.Model):
 
 class Cook(models.Model):
     order = models.ForeignKey(Orders, on_delete=models.CASCADE, related_name="Orders")
+
+    checkbox = CheckboxInput(attrs={"class": "Order accepted by Cook"})
 
     def __str__(self):
         return str(self.order)
