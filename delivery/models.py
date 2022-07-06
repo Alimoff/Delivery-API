@@ -22,8 +22,7 @@ class Food(models.Model):
         return self.type_of_meal
 
     class Meta:
-        verbose_name = "Country"
-        verbose_name_plural = "Countries"
+        verbose_name = "Food"
 
 
 # Main Class
@@ -53,7 +52,9 @@ class Orders(models.Model):
 
     def __str__(self):
         return (
-            str(self.name)
+            str(self.id)
+            + ")   "
+            + str(self.name)
             + "    |    "
             + str(self.order)
             + "    |   "
